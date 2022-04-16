@@ -9,7 +9,7 @@ UIBuilder 1.0 privides SwiftUI style creation of the view, configuring it and re
 ```Swift
 let view = UIBuilder(UIView.self)
     .backgroundColor(.red)
-    .frame(CGRect(x: 0, y: 0, width: 100, height: 100)
+    .frame(CGRect(x: 0, y: 0, width: 100, height: 100))
     .tintColor(.blue)
     .tag(12)
     .view
@@ -42,5 +42,9 @@ let configuredButton = UIBuilder(button)
     .image(UIImage(named: "hello"))
     .view
 ```
+
+## Support
+
+UIBuilder supports iOS 9 and higher versions, but certain properties require higher version if the project deployment target doesn't support them
 
 Berrium © 2022
