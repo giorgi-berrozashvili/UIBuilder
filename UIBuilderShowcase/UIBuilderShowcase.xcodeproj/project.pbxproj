@@ -13,6 +13,7 @@
 		E60FDAF1280AED8A00DA1BD7 /* UIBuilder+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAF0280AED8A00DA1BD7 /* UIBuilder+TextField.swift */; };
 		E60FDAF3280AF07900DA1BD7 /* UIBuilder+Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAF2280AF07900DA1BD7 /* UIBuilder+Switch.swift */; };
 		E60FDAF5280AF19200DA1BD7 /* UIBuilder+PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAF4280AF19200DA1BD7 /* UIBuilder+PageControl.swift */; };
+		E60FDAFB280AF3E300DA1BD7 /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAFA280AF3E300DA1BD7 /* UIBuilder.swift */; };
 		E63071A3280AD90300FCB903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A2280AD90300FCB903 /* AppDelegate.swift */; };
 		E63071A5280AD90300FCB903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A4280AD90300FCB903 /* SceneDelegate.swift */; };
 		E63071A7280AD90300FCB903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A6280AD90300FCB903 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		E60FDAF0280AED8A00DA1BD7 /* UIBuilder+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+TextField.swift"; sourceTree = "<group>"; };
 		E60FDAF2280AF07900DA1BD7 /* UIBuilder+Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+Switch.swift"; sourceTree = "<group>"; };
 		E60FDAF4280AF19200DA1BD7 /* UIBuilder+PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+PageControl.swift"; sourceTree = "<group>"; };
+		E60FDAFA280AF3E300DA1BD7 /* UIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBuilder.swift; sourceTree = "<group>"; };
 		E630719F280AD90300FCB903 /* UIBuilderShowcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIBuilderShowcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63071A2280AD90300FCB903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E63071A4280AD90300FCB903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,16 +97,17 @@
 		E63071B6280AD91D00FCB903 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				E60FDAFA280AF3E300DA1BD7 /* UIBuilder.swift */,
 				E63071B7280AD99E00FCB903 /* UIBuilder+View.swift */,
-				E63071BA280AD99E00FCB903 /* UIBuilder+Button.swift */,
 				E63071C1280ADDC200FCB903 /* UIBuilder+Control.swift */,
-				E63071B8280AD99E00FCB903 /* UIBuilder+ImageView.swift */,
 				E63071B9280AD99E00FCB903 /* UIBuilder+Label.swift */,
-				E63071BB280AD99E00FCB903 /* UIBuilder+StackView.swift */,
-				E60FDAEA280AE1C600DA1BD7 /* UIBuilder+TableView.swift */,
-				E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */,
-				E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */,
+				E63071BA280AD99E00FCB903 /* UIBuilder+Button.swift */,
+				E63071B8280AD99E00FCB903 /* UIBuilder+ImageView.swift */,
 				E60FDAF0280AED8A00DA1BD7 /* UIBuilder+TextField.swift */,
+				E63071BB280AD99E00FCB903 /* UIBuilder+StackView.swift */,
+				E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */,
+				E60FDAEA280AE1C600DA1BD7 /* UIBuilder+TableView.swift */,
+				E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */,
 				E60FDAF2280AF07900DA1BD7 /* UIBuilder+Switch.swift */,
 				E60FDAF4280AF19200DA1BD7 /* UIBuilder+PageControl.swift */,
 			);
@@ -186,6 +189,7 @@
 				E63071A7280AD90300FCB903 /* ViewController.swift in Sources */,
 				E63071A3280AD90300FCB903 /* AppDelegate.swift in Sources */,
 				E63071C2280ADDC200FCB903 /* UIBuilder+Control.swift in Sources */,
+				E60FDAFB280AF3E300DA1BD7 /* UIBuilder.swift in Sources */,
 				E63071BF280AD99E00FCB903 /* UIBuilder+Button.swift in Sources */,
 				E63071A5280AD90300FCB903 /* SceneDelegate.swift in Sources */,
 				E63071BC280AD99E00FCB903 /* UIBuilder+View.swift in Sources */,

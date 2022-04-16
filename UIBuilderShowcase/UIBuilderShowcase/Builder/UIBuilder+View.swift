@@ -7,16 +7,7 @@
 
 import UIKit
 
-open class UIBuilder<ViewType> where ViewType: UIView {
-    public private(set) var view: ViewType
-    
-    public init(_ view: ViewType) {
-        self.view = view
-    }
-    
-    open var product: ViewType {
-        return view
-    }
+extension UIBuilder {
     
     @discardableResult
     open func frame(_ frame: CGRect) -> UIBuilder {
