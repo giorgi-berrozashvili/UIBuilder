@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		E60FDAEB280AE1C600DA1BD7 /* UIBuilder+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAEA280AE1C600DA1BD7 /* UIBuilder+TableView.swift */; };
 		E60FDAED280AE75600DA1BD7 /* UIBuilder+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */; };
+		E60FDAEF280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */; };
 		E63071A3280AD90300FCB903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A2280AD90300FCB903 /* AppDelegate.swift */; };
 		E63071A5280AD90300FCB903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A4280AD90300FCB903 /* SceneDelegate.swift */; };
 		E63071A7280AD90300FCB903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A6280AD90300FCB903 /* ViewController.swift */; };
 		E63071AA280AD90300FCB903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63071A8280AD90300FCB903 /* Main.storyboard */; };
 		E63071AC280AD90400FCB903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63071AB280AD90400FCB903 /* Assets.xcassets */; };
 		E63071AF280AD90400FCB903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63071AD280AD90400FCB903 /* LaunchScreen.storyboard */; };
-		E63071BC280AD99E00FCB903 /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071B7280AD99E00FCB903 /* UIBuilder.swift */; };
+		E63071BC280AD99E00FCB903 /* UIBuilder+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071B7280AD99E00FCB903 /* UIBuilder+View.swift */; };
 		E63071BD280AD99E00FCB903 /* UIBuilder+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071B8280AD99E00FCB903 /* UIBuilder+ImageView.swift */; };
 		E63071BE280AD99E00FCB903 /* UIBuilder+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071B9280AD99E00FCB903 /* UIBuilder+Label.swift */; };
 		E63071BF280AD99E00FCB903 /* UIBuilder+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071BA280AD99E00FCB903 /* UIBuilder+Button.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		E60FDAEA280AE1C600DA1BD7 /* UIBuilder+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+TableView.swift"; sourceTree = "<group>"; };
 		E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+ScrollView.swift"; sourceTree = "<group>"; };
+		E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+CollectionView.swift"; sourceTree = "<group>"; };
 		E630719F280AD90300FCB903 /* UIBuilderShowcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIBuilderShowcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63071A2280AD90300FCB903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E63071A4280AD90300FCB903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		E63071AB280AD90400FCB903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E63071AE280AD90400FCB903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E63071B0280AD90400FCB903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E63071B7280AD99E00FCB903 /* UIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBuilder.swift; sourceTree = "<group>"; };
+		E63071B7280AD99E00FCB903 /* UIBuilder+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBuilder+View.swift"; sourceTree = "<group>"; };
 		E63071B8280AD99E00FCB903 /* UIBuilder+ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBuilder+ImageView.swift"; sourceTree = "<group>"; };
 		E63071B9280AD99E00FCB903 /* UIBuilder+Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBuilder+Label.swift"; sourceTree = "<group>"; };
 		E63071BA280AD99E00FCB903 /* UIBuilder+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBuilder+Button.swift"; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		E63071B6280AD91D00FCB903 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				E63071B7280AD99E00FCB903 /* UIBuilder.swift */,
+				E63071B7280AD99E00FCB903 /* UIBuilder+View.swift */,
 				E63071BA280AD99E00FCB903 /* UIBuilder+Button.swift */,
 				E63071C1280ADDC200FCB903 /* UIBuilder+Control.swift */,
 				E63071B8280AD99E00FCB903 /* UIBuilder+ImageView.swift */,
@@ -95,6 +97,7 @@
 				E63071BB280AD99E00FCB903 /* UIBuilder+StackView.swift */,
 				E60FDAEA280AE1C600DA1BD7 /* UIBuilder+TableView.swift */,
 				E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */,
+				E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -170,12 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60FDAEF280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift in Sources */,
 				E63071A7280AD90300FCB903 /* ViewController.swift in Sources */,
 				E63071A3280AD90300FCB903 /* AppDelegate.swift in Sources */,
 				E63071C2280ADDC200FCB903 /* UIBuilder+Control.swift in Sources */,
 				E63071BF280AD99E00FCB903 /* UIBuilder+Button.swift in Sources */,
 				E63071A5280AD90300FCB903 /* SceneDelegate.swift in Sources */,
-				E63071BC280AD99E00FCB903 /* UIBuilder.swift in Sources */,
+				E63071BC280AD99E00FCB903 /* UIBuilder+View.swift in Sources */,
 				E63071C0280AD99E00FCB903 /* UIBuilder+StackView.swift in Sources */,
 				E63071BE280AD99E00FCB903 /* UIBuilder+Label.swift in Sources */,
 				E63071BD280AD99E00FCB903 /* UIBuilder+ImageView.swift in Sources */,
