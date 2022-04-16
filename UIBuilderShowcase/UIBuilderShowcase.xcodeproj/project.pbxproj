@@ -11,6 +11,8 @@
 		E60FDAED280AE75600DA1BD7 /* UIBuilder+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */; };
 		E60FDAEF280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */; };
 		E60FDAF1280AED8A00DA1BD7 /* UIBuilder+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAF0280AED8A00DA1BD7 /* UIBuilder+TextField.swift */; };
+		E60FDAF3280AF07900DA1BD7 /* UIBuilder+Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAF2280AF07900DA1BD7 /* UIBuilder+Switch.swift */; };
+		E60FDAF5280AF19200DA1BD7 /* UIBuilder+PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FDAF4280AF19200DA1BD7 /* UIBuilder+PageControl.swift */; };
 		E63071A3280AD90300FCB903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A2280AD90300FCB903 /* AppDelegate.swift */; };
 		E63071A5280AD90300FCB903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A4280AD90300FCB903 /* SceneDelegate.swift */; };
 		E63071A7280AD90300FCB903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63071A6280AD90300FCB903 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+ScrollView.swift"; sourceTree = "<group>"; };
 		E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+CollectionView.swift"; sourceTree = "<group>"; };
 		E60FDAF0280AED8A00DA1BD7 /* UIBuilder+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+TextField.swift"; sourceTree = "<group>"; };
+		E60FDAF2280AF07900DA1BD7 /* UIBuilder+Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+Switch.swift"; sourceTree = "<group>"; };
+		E60FDAF4280AF19200DA1BD7 /* UIBuilder+PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBuilder+PageControl.swift"; sourceTree = "<group>"; };
 		E630719F280AD90300FCB903 /* UIBuilderShowcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIBuilderShowcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63071A2280AD90300FCB903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E63071A4280AD90300FCB903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				E60FDAEC280AE75600DA1BD7 /* UIBuilder+ScrollView.swift */,
 				E60FDAEE280AEA2600DA1BD7 /* UIBuilder+CollectionView.swift */,
 				E60FDAF0280AED8A00DA1BD7 /* UIBuilder+TextField.swift */,
+				E60FDAF2280AF07900DA1BD7 /* UIBuilder+Switch.swift */,
+				E60FDAF4280AF19200DA1BD7 /* UIBuilder+PageControl.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -183,8 +189,10 @@
 				E63071BF280AD99E00FCB903 /* UIBuilder+Button.swift in Sources */,
 				E63071A5280AD90300FCB903 /* SceneDelegate.swift in Sources */,
 				E63071BC280AD99E00FCB903 /* UIBuilder+View.swift in Sources */,
+				E60FDAF5280AF19200DA1BD7 /* UIBuilder+PageControl.swift in Sources */,
 				E63071C0280AD99E00FCB903 /* UIBuilder+StackView.swift in Sources */,
 				E63071BE280AD99E00FCB903 /* UIBuilder+Label.swift in Sources */,
+				E60FDAF3280AF07900DA1BD7 /* UIBuilder+Switch.swift in Sources */,
 				E63071BD280AD99E00FCB903 /* UIBuilder+ImageView.swift in Sources */,
 				E60FDAF1280AED8A00DA1BD7 /* UIBuilder+TextField.swift in Sources */,
 				E60FDAED280AE75600DA1BD7 /* UIBuilder+ScrollView.swift in Sources */,
