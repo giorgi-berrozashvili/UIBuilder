@@ -44,5 +44,11 @@ extension UIBuilder where ViewType == UIStackView {
         self.view.setCustomSpacing(space, after: view)
         return self
     }
+    
+    @discardableResult
+    open func arrangedSubViews(_ subviews: UIView...) -> UIBuilder {
+        subviews.forEach { view.addArrangedSubview($0) }
+        return self
+    }
 }
 
