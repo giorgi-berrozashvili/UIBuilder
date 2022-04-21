@@ -157,8 +157,20 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func translateAutoResizingMasksInfoConstraints(_ translateAutoResizingMasksInfoConstraints: Bool) -> UIBuilder {
-        self.view.translatesAutoresizingMaskIntoConstraints = translateAutoResizingMasksInfoConstraints
+    open func translatesAutoResizingMasksInfoConstraints(_ translatesAutoResizingMasksInfoConstraints: Bool) -> UIBuilder {
+        self.view.translatesAutoresizingMaskIntoConstraints = translatesAutoResizingMasksInfoConstraints
+        return self
+    }
+    
+    @discardableResult
+    open func height(_ height: CGFloat) -> UIBuilder {
+        view.heightAnchor.constraint(equalToConstant: height).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    open func width(_ width: CGFloat) -> UIBuilder {
+        view.widthAnchor.constraint(equalToConstant: width).isActive = true
         return self
     }
     

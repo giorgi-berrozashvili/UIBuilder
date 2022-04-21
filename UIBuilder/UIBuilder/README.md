@@ -14,7 +14,7 @@ let view = UIBuilder(UIView.self)
     .tag(12)
     .view
 
-let table = UIBuilder(UITableView.self)
+lazy var table = UIBuilder(UITableView.self)
     .delegate(self)
     .dataSource(self)
     .backgroundColor(.lightGray)
@@ -48,3 +48,5 @@ let configuredButton = UIBuilder(button)
 UIBuilder supports iOS 9 and higher versions, but certain properties require higher version if the project deployment target doesn't support them
 
 Berrium © 2022
+
+
