@@ -1,3 +1,5 @@
+![UIBuilder](cover-logo.png)
+
 # UIBuilder
 
 Pack of UIView extensions to simplify creation of UIView and other primary UI classes
