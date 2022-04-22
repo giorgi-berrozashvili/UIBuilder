@@ -157,8 +157,8 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func translatesAutoResizingMasksInfoConstraints(_ translatesAutoResizingMasksInfoConstraints: Bool) -> UIBuilder {
-        self.view.translatesAutoresizingMaskIntoConstraints = translatesAutoResizingMasksInfoConstraints
+    open func translatesAutoresizingMaskIntoConstraints(_ translatesAutoresizingMaskIntoConstraints: Bool) -> UIBuilder {
+        self.view.translatesAutoresizingMaskIntoConstraints = translatesAutoresizingMaskIntoConstraints
         return self
     }
     

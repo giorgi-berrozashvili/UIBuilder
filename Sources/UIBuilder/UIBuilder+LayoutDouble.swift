@@ -217,6 +217,28 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
             secondRight: secondRight
         )
     }
+    
+    @discardableResult
+    open func alignZStack(firstTop: CGFloat,
+                          firstLeft: CGFloat,
+                          firstRight: CGFloat,
+                          firstBottom: CGFloat,
+                          secondTop: CGFloat,
+                          secondLeft: CGFloat,
+                          secondRight: CGFloat,
+                          secondBottom: CGFloat) -> UILayoutDouble {
+        
+        subView1.topAnchor.constraint(equalTo: superView.topAnchor, constant: firstTop).isActive = true
+        subView1.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: firstLeft).isActive = true
+        subView1.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -firstRight).isActive = true
+        subView1.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -firstBottom).isActive = true
+        
+        subView2.topAnchor.constraint(equalTo: superView.topAnchor, constant: secondTop).isActive = true
+        subView2.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: secondLeft).isActive = true
+        subView2.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -secondRight).isActive = true
+        subView2.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -secondBottom).isActive = true
+        return self
+    }
 }
 
 extension UILayoutDouble {

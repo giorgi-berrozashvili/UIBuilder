@@ -21,7 +21,7 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func subView<SubView1, SubView2>(_ subview1: SubView1,
+    open func subViews<SubView1, SubView2>(_ subview1: SubView1,
                                           _ subview2: SubView2,
                                           _ completion: ((UILayoutDouble<ViewType, SubView1, SubView2>) -> Void)? = nil) -> UIBuilder where SubView1: UIView, SubView2: UIView  {
         
@@ -42,7 +42,7 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func subView<SubViewType1, SubViewType2>(_ subview1: SubViewType1,
+    open func subViews<SubViewType1, SubViewType2>(_ subview1: SubViewType1,
                                                   _ subview2: SubViewType2,
                                                   _ completion: ((_ superView: ViewType, _ subView1: SubViewType1, _ subview2: SubViewType2) -> Void)? = nil) -> UIBuilder where SubViewType1: UIView, SubViewType2: UIView {
         
