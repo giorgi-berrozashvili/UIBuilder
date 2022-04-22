@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UIBuilder+Layout.swift
 //  
 //
 //  Created by Giorgi Berozashvili on 21.04.22.
@@ -7,170 +7,54 @@
 
 import UIKit
 
-public typealias LayoutCompletion = ((_ superView: UIView, _ subView: UIView) -> Void)
-public typealias Layout2Completion = ((_ superView: UIView, _ subView1: UIView, _ subView2: UIView) -> Void)
-public typealias Layout3Completion = ((_ superView: UIView, _ subView1: UIView, _ subView2: UIView, _ subView3: UIView) -> Void)
-public typealias Layout4Completion = ((_ superView: UIView, _ subView1: UIView, _ subView2: UIView, _ subView3: UIView, _ subView4: UIView) -> Void)
-public typealias LayoutMultiCompletion = ((_ superView: UIView, _ subViews: [UIView]) -> Void)
-
-extension UIBuilder {
+open class UILayout<SuperView, SubView> where SuperView: UIView, SubView: UIView {
+    public var superView: SuperView
+    public var subView: SubView
+    
+    public init(superView: SuperView, subView: SubView) {
+        self.superView = superView
+        self.subView = subView
+    }
+    
     @discardableResult
-    open func subView(_ subview: UIView,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        completion?(view, subview)
+    open func top(_ padding: CGFloat = .zero) -> UILayout {
+        subView.topAnchor.constraint(equalTo: superView.topAnchor, constant: padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func subView(_ subview: UIView,
-                      padding: CGFloat,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        subview.topAnchor.constraint(equalTo: view.topAnchor, constant: padding).isActive = true
-        subview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding).isActive = true
-        subview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding).isActive = true
-        subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding).isActive = true
-        completion?(view, subview)
+    open func left(_ padding: CGFloat = .zero) -> UILayout {
+        subView.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func subView(_ subview: UIView,
-                      top: CGFloat,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        subview.topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
-        completion?(view, subview)
+    open func right(_ padding: CGFloat = .zero) -> UILayout {
+        subView.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func subView(_ subview: UIView,
-                      bottom: CGFloat,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -bottom).isActive = true
-        completion?(view, subview)
+    open func bottom(_ padding: CGFloat = .zero) -> UILayout {
+        subView.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func subView(_ subview: UIView,
-                      left: CGFloat,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        subview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: left).isActive = true
-        completion?(view, subview)
-        return self
+    open func padding(_ padding: CGFloat) -> UILayout {
+        return self.top(padding).left(padding).right(padding).bottom(padding)
     }
     
     @discardableResult
-    open func subView(_ subview: UIView,
-                      right: CGFloat,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        subview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -right).isActive = true
-        completion?(view, subview)
-        return self
-    }
-    
-    @discardableResult
-    open func subView(_ subview: UIView,
-                      top: CGFloat,
-                      bottom: CGFloat,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        subview.topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
-        subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -bottom).isActive = true
-        completion?(view, subview)
-        return self
-    }
-    
-    @discardableResult
-    open func subView(_ subview: UIView,
-                      left: CGFloat,
-                      right: CGFloat,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        subview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: left).isActive = true
-        subview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -right).isActive = true
-        completion?(view, subview)
-        return self
-    }
-    
-    @discardableResult
-    open func subView(_ subview: UIView,
-                      top: CGFloat? = nil,
-                      left: CGFloat? = nil,
-                      right: CGFloat? = nil,
-                      bottom: CGFloat? = nil,
-                      _ completion: LayoutCompletion? = nil) -> UIBuilder {
-        
-        view.addSubview(subview)
-        
-        top.map { subview.topAnchor.constraint(equalTo: view.topAnchor, constant: $0).isActive = true }
-        left.map { subview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: $0).isActive = true }
-        right.map { subview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -$0).isActive = true }
-        bottom.map { subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -$0).isActive = true }
-        
-        completion?(view, subview)
-        return self
-    }
-    
-    @discardableResult
-    open func subViews(_ first: UIView,
-                       _ second: UIView,
-                       _ completion: Layout2Completion? = nil) -> UIBuilder {
-        
-        view.addSubview(first)
-        view.addSubview(second)
-        completion?(view, first, second)
-        return self
-    }
-    
-    @discardableResult
-    open func subViews(_ first: UIView,
-                       _ second: UIView,
-                       _ third: UIView,
-                       _ completion: Layout3Completion? = nil) -> UIBuilder {
-        
-        view.addSubview(first)
-        view.addSubview(second)
-        view.addSubview(third)
-        completion?(view, first, second, third)
-        return self
-    }
-    
-    @discardableResult
-    open func subViews(_ first: UIView,
-                       _ second: UIView,
-                       _ third: UIView,
-                       _ fourth: UIView,
-                       _ completion: Layout4Completion? = nil) -> UIBuilder {
-        
-        view.addSubview(first)
-        view.addSubview(second)
-        view.addSubview(third)
-        view.addSubview(fourth)
-        completion?(view, first, second, third, fourth)
-        return self
-    }
-    
-    @discardableResult
-    open func subViews(_ subviews: [UIView],
-                       _ completion: LayoutMultiCompletion? = nil) -> UIBuilder {
-        
-        subviews.forEach { view.addSubview($0) }
-        completion?(view, subviews)
+    open func center(_ axis: NSLayoutConstraint.Axis) -> UILayout {
+        switch axis {
+        case .vertical:
+            subView.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        case .horizontal:
+            subView.centerXAnchor.constraint(equalTo: superView.centerXAnchor).isActive = true
+        @unknown default:
+            break
+        }
         return self
     }
 }

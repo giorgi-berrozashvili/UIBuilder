@@ -174,6 +174,30 @@ extension UIBuilder {
         return self
     }
     
+    @discardableResult
+    open func verticalHuggingPriority(_ priority: Float) -> UIBuilder {
+        view.setContentHuggingPriority(UILayoutPriority(rawValue: priority), for: .vertical)
+        return self
+    }
+    
+    @discardableResult
+    open func horizontalHuggingPriority(_ priority: Float) -> UIBuilder {
+        view.setContentHuggingPriority(UILayoutPriority(rawValue: priority), for: .horizontal)
+        return self
+    }
+    
+    @discardableResult
+    open func verticalResistancePriority(_ priority: Float) -> UIBuilder {
+        view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: priority), for: .vertical)
+        return self
+    }
+    
+    @discardableResult
+    open func horizontalResistancePriority(_ priority: Float) -> UIBuilder {
+        view.setContentCompressionResistancePriority(UILayoutPriority(priority), for: .horizontal)
+        return self
+    }
+    
     @available(iOS 13.0, *)
     @discardableResult
     open func overrideUserInterfaceStyle(_ overrideUserInterfaceStyle: UIUserInterfaceStyle) -> UIBuilder {
