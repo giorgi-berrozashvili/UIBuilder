@@ -101,10 +101,15 @@ let view = UIBuilder(UIView.self)
 Here are the methods of `UILayout`
 
 `top(_:) -> UILayout // takes CGFloat value and arranges topAnchor of subView to the topAnchor of superView with required spacing`
+
 `left(_:) -> UILayout // takes CGFloat value and arranges leadingAnchor of subView to the leadingAnchor of superView with required spacing`
+
 `right(_:) -> UILayout // takes CGFloat value and arranges trailingAnchor of subView to the trailingAnchor of superView with required spacing`
+
 `bottom(_:) -> UILayout // takes CGFloat value and arranges bottomAnchor of subView to the bottomAnchor of superView with required spacing`
+
 `padding(_:) -> UILayout // takes CGFloat value and creates allsided padding, i.e. calls four above-mentioned methods 
+
 `center(_:) -> UILayout // takes NSLayoutConstraint.Axis parameter and centers the subView to the superView according to axis (uses centerX and centerY anchors)
 
 > **_WARNING:_**  UILayout uses layout constraints and anchors for arrangement, but for more simplification anchors like trailing and bottom are automatically trated as a negative values, i.e. bottom(16.0) means that the subView's bottomAnchor is aligned with (-16.0) space from superView's bottomAnchor
