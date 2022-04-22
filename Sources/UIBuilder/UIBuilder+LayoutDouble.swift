@@ -33,14 +33,14 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
                                 spacing: CGFloat,
                                 right: CGFloat) -> UILayoutDouble {
         
-        return alignHorizontally(
+        return alignHorizontallyPrivate(
             left: left,
             spacing: spacing,
             right: right,
-            leftTop: nil,
-            leftBottom: nil,
-            rightTop: nil,
-            rightBottom: nil
+            firstTop: nil,
+            firstBottom: nil,
+            secondTop: nil,
+            secondBottom: nil
         )
     }
     
@@ -48,17 +48,17 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat,
-                                leftTop: CGFloat,
-                                leftBottom: CGFloat) -> UILayoutDouble {
+                                firstTop: CGFloat,
+                                firstBottom: CGFloat) -> UILayoutDouble {
         
-        return alignHorizontally(
+        return alignHorizontallyPrivate(
             left: left,
             spacing: spacing,
             right: right,
-            leftTop: leftTop,
-            leftBottom: leftBottom,
-            rightTop: nil,
-            rightBottom: nil
+            firstTop: firstTop,
+            firstBottom: firstBottom,
+            secondTop: nil,
+            secondBottom: nil
         )
     }
     
@@ -66,17 +66,17 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat,
-                                rightTop: CGFloat,
-                                rightBottom: CGFloat) -> UILayoutDouble {
+                                secondTop: CGFloat,
+                                secondBottom: CGFloat) -> UILayoutDouble {
         
-        return alignHorizontally(
+        return alignHorizontallyPrivate(
             left: left,
             spacing: spacing,
             right: right,
-            leftTop: nil,
-            leftBottom: nil,
-            rightTop: rightTop,
-            rightBottom: rightBottom
+            firstTop: nil,
+            firstBottom: nil,
+            secondTop: secondTop,
+            secondBottom: secondBottom
         )
     }
     
@@ -87,14 +87,14 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
                                 top: CGFloat,
                                 bottom: CGFloat) -> UILayoutDouble {
         
-        return alignHorizontally(
+        return alignHorizontallyPrivate(
             left: left,
             spacing: spacing,
             right: right,
-            leftTop: top,
-            leftBottom: bottom,
-            rightTop: top,
-            rightBottom: bottom
+            firstTop: top,
+            firstBottom: bottom,
+            secondTop: top,
+            secondBottom: bottom
         )
     }
     
@@ -102,24 +102,20 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat,
-                                leftTop: CGFloat?,
-                                leftBottom: CGFloat?,
-                                rightTop: CGFloat?,
-                                rightBottom: CGFloat?) -> UILayoutDouble {
+                                firstTop: CGFloat,
+                                firstBottom: CGFloat,
+                                secondTop: CGFloat,
+                                secondBottom: CGFloat) -> UILayoutDouble {
         
-        subView1.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: left).isActive = true
-        subView2.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -right).isActive = true
-        
-        leftTop.map { subView1.topAnchor.constraint(equalTo: superView.topAnchor, constant: $0).isActive = true }
-        leftBottom.map { subView1.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -$0).isActive = true }
-        rightTop.map { subView2.topAnchor.constraint(equalTo: superView.topAnchor, constant: $0).isActive = true }
-        rightBottom.map { subView2.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -$0).isActive = true }
-        
-        subView2.leadingAnchor.constraint(equalTo: subView1.trailingAnchor, constant: spacing).isActive = true
-        
-        subView1.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
-        subView2.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
-        return self
+        return alignHorizontallyPrivate(
+            left: left,
+            spacing: spacing,
+            right: right,
+            firstTop: firstTop,
+            firstBottom: firstBottom,
+            secondTop: secondTop,
+            secondBottom: secondBottom
+        )
     }
     
     @discardableResult
@@ -137,14 +133,14 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
                               spacing: CGFloat,
                               bottom: CGFloat) -> UILayoutDouble {
         
-        return alignVertically(
+        return alignVerticallyPrivate(
             top: top,
             spacing: spacing,
             bottom: bottom,
-            topLeft: nil,
-            bottomLeft: nil,
-            topRight: nil,
-            bottomRight: nil
+            firstLeft: nil,
+            firstRight: nil,
+            secondLeft: nil,
+            secondRight: nil
         )
     }
     
@@ -152,17 +148,17 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat,
-                              topLeft: CGFloat,
-                              topRight: CGFloat) -> UILayoutDouble {
+                              firstLeft: CGFloat,
+                              firstRight: CGFloat) -> UILayoutDouble {
         
-        return alignVertically(
+        return alignVerticallyPrivate(
             top: top,
             spacing: spacing,
             bottom: bottom,
-            topLeft: topLeft,
-            bottomLeft: nil,
-            topRight: topRight,
-            bottomRight: nil
+            firstLeft: firstLeft,
+            firstRight: firstRight,
+            secondLeft: nil,
+            secondRight: nil
         )
     }
     
@@ -170,17 +166,17 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat,
-                              bottomLeft: CGFloat,
-                              bottomRight: CGFloat) -> UILayoutDouble {
+                              secondLeft: CGFloat,
+                              secondRight: CGFloat) -> UILayoutDouble {
         
-        return alignVertically(
+        return alignVerticallyPrivate(
             top: top,
             spacing: spacing,
             bottom: bottom,
-            topLeft: nil,
-            bottomLeft: bottomLeft,
-            topRight: nil,
-            bottomRight: bottomRight
+            firstLeft: nil,
+            firstRight: nil,
+            secondLeft: secondLeft,
+            secondRight: secondRight
         )
     }
     
@@ -191,14 +187,14 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
                               left: CGFloat,
                               right: CGFloat) -> UILayoutDouble {
         
-        return alignVertically(
+        return alignVerticallyPrivate(
             top: top,
             spacing: spacing,
             bottom: bottom,
-            topLeft: left,
-            bottomLeft: left,
-            topRight: right,
-            bottomRight: right
+            firstLeft: left,
+            firstRight: right,
+            secondLeft: left,
+            secondRight: right
         )
     }
     
@@ -206,18 +202,62 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat,
-                              topLeft: CGFloat?,
-                              bottomLeft: CGFloat?,
-                              topRight: CGFloat?,
-                              bottomRight: CGFloat?) -> UILayoutDouble {
+                              firstLeft: CGFloat,
+                              firstRight: CGFloat,
+                              secondLeft: CGFloat,
+                              secondRight: CGFloat) -> UILayoutDouble {
+        
+        return alignVerticallyPrivate(
+            top: top,
+            spacing: spacing,
+            bottom: bottom,
+            firstLeft: firstLeft,
+            firstRight: firstRight,
+            secondLeft: secondLeft,
+            secondRight: secondRight
+        )
+    }
+}
+
+extension UILayoutDouble {
+    private func alignHorizontallyPrivate(left: CGFloat,
+                                          spacing: CGFloat,
+                                          right: CGFloat,
+                                          firstTop: CGFloat?,
+                                          firstBottom: CGFloat?,
+                                          secondTop: CGFloat?,
+                                          secondBottom: CGFloat?) -> UILayoutDouble {
+        
+        subView1.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: left).isActive = true
+        subView2.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -right).isActive = true
+        
+        firstTop.map { subView1.topAnchor.constraint(equalTo: superView.topAnchor, constant: $0).isActive = true }
+        firstBottom.map { subView1.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -$0).isActive = true }
+        secondTop.map { subView2.topAnchor.constraint(equalTo: superView.topAnchor, constant: $0).isActive = true }
+        secondBottom.map { subView2.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -$0).isActive = true }
+        
+        subView2.leadingAnchor.constraint(equalTo: subView1.trailingAnchor, constant: spacing).isActive = true
+        
+        subView1.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        subView2.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        return self
+    }
+    
+    private func alignVerticallyPrivate(top: CGFloat,
+                                        spacing: CGFloat,
+                                        bottom: CGFloat,
+                                        firstLeft: CGFloat?,
+                                        firstRight: CGFloat?,
+                                        secondLeft: CGFloat?,
+                                        secondRight: CGFloat?) -> UILayoutDouble {
         
         subView1.topAnchor.constraint(equalTo: superView.topAnchor, constant: top).isActive = true
         subView2.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -bottom).isActive = true
         
-        topLeft.map { subView1.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: $0).isActive = true }
-        topRight.map { subView1.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -$0).isActive = true }
-        bottomLeft.map { subView2.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: $0).isActive = true }
-        bottomRight.map { subView2.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -$0).isActive = true }
+        firstLeft.map { subView1.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: $0).isActive = true }
+        firstRight.map { subView1.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -$0).isActive = true }
+        secondLeft.map { subView2.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: $0).isActive = true }
+        secondRight.map { subView2.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -$0).isActive = true }
         
         subView2.topAnchor.constraint(equalTo: subView1.bottomAnchor, constant: spacing).isActive = true
         
