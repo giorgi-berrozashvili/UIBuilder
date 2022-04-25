@@ -1,8 +1,6 @@
 //
 //  UIBuilder+LayoutDouble.swift
-//  
-//
-//  Created by Giorgi Berozashvili on 22.04.22.
+//  Created by Berrium on 22.04.22.
 //
 
 import UIKit

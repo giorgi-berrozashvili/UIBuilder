@@ -1,8 +1,6 @@
 //
 //  UIBuilder+Label.swift
-//  AdvancedSwift
-//
-//  Created by Giorgi Berozashvili on 08.04.22.
+//  Created by Berrium on 08.04.22.
 //
 
 import UIKit

@@ -1,8 +1,6 @@
 //
-//  UIBuilder.swift
-//  AdvancedSwift
-//
-//  Created by Giorgi Berozashvili on 08.04.22.
+//  UIBuilder+View.swift
+//  Created by Berrium on 08.04.22.
 //
 
 import UIKit

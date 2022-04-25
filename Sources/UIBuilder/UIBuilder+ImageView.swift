@@ -1,8 +1,6 @@
 //
 //  UIBuilder+ImageView.swift
-//  AdvancedSwift
-//
-//  Created by Giorgi Berozashvili on 10.04.22.
+//  Created by Berrium on 10.04.22.
 //
 
 import UIKit

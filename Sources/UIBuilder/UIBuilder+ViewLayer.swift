@@ -1,8 +1,6 @@
 //
 //  UIBuilder+ViewLayer.swift
-//  UIBuilder
-//
-//  Created by Giorgi Berozashvili on 21.04.22.
+//  Created by Berrium on 21.04.22.
 //
 
 import UIKit

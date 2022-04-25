@@ -1,8 +1,8 @@
 //
 //  UIBuilder+Layout.swift
 //  
-//
-//  Created by Giorgi Berozashvili on 21.04.22.
+//  UIBuilder+Layout.swift
+//  Created by Berrium on 21.04.22.
 //
 
 import UIKit
