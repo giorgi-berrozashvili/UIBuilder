@@ -24,6 +24,10 @@ let view = UIBuilder(UIView.self)
 
 `UIBuilder` takes the type of `UIView`, initializes an `UIView` object, configures backgroundColor, frame, tintColor, tag and finally returns the view object 
 
+> **_NOTE:_**  UIBuilder class contains all the computed/stored properties and most of the convenient methods of the target view, also it uses generic type `ViewType` which gives opportunity to "recognize" views with their types and provide appropriate methods for them, i.e. During building `UIView` there are properties of `UIView` class, but when `UILabel` is built, additional properties such as `text`, `font`, etc are also available
+
+---
+
 2. Creating a popular UIKit subclass of UIView
 ```Swift
 lazy var table = UIBuilder(UITableView.self)
@@ -46,6 +50,35 @@ let stack = UIBuilder(UIStackView.self)
 
 > **_NOTE:_**  `UIBuilder` automatically manages to return same Type as given, so the input and output objects are always the same in compile and runtime
 
+`UIBuilder-1.1.0` supports most of the popular UIKit components, here is the list of supported views:
+
+- [UIView](https://developer.apple.com/documentation/uikit/uiview)
+- [UIControl](https://developer.apple.com/documentation/uikit/uicontrol)
+- [UILabel](https://developer.apple.com/documentation/uikit/uilabel)
+- [UIImageView](https://developer.apple.com/documentation/uikit/uiimageview)
+- [UITextField](https://developer.apple.com/documentation/uikit/uitextfield)
+- [UIButton](https://developer.apple.com/documentation/uikit/uibutton)
+- [UIStackView](https://developer.apple.com/documentation/uikit/uistackview)
+- [UIScrollView](https://developer.apple.com/documentation/uikit/uiscrollview)
+- [UITableView](https://developer.apple.com/documentation/uikit/uitableview)
+- [UICollectionView](https://developer.apple.com/documentation/uikit/uicollectionview)
+- [UITextView](https://developer.apple.com/documentation/uikit/uitextview)
+- [UISwitch](https://developer.apple.com/documentation/uikit/uiswitch)
+- [UISegmentedControl](https://developer.apple.com/documentation/uikit/uisegmentedcontrol)
+- [UISlider](https://developer.apple.com/documentation/uikit/uislider)
+- [UIStepper](https://developer.apple.com/documentation/uikit/uistepper)
+- [UIProgressView](https://developer.apple.com/documentation/uikit/uiprogressview)
+- [UIPickerView](https://developer.apple.com/documentation/uikit/uipickerview)
+- [UIDatePicker](https://developer.apple.com/documentation/uikit/uidatepicker)
+- [UIPageControl](https://developer.apple.com/documentation/uikit/uipagecontrol)
+- [UIActivityIndicatorView](https://developer.apple.com/documentation/uikit/uiactivityindicatorview)
+- [UIColorWell](https://developer.apple.com/documentation/uikit/uicolorwell)
+
+In case of building views beyond this list, `UIBuilder` treats them like their super class, i.e. if a custom view `RoundImageView` is being built and it is a subclass of `UIImageView`, then the builder provides methods of `UIImageView` as the closest relative of the `RoundImageView`. 
+
+UIBuilder works in a hierarchical way, in other words, methods provided for building `UIView` are also present during `UILabel` or `UIControl` building and methods of `UIControl` are also available for `UIButton` and so on...
+
+---
 
 3. `UIBuilder` also supports configuring existing views
 
@@ -60,6 +93,8 @@ let configuredButton = UIBuilder(button)
 ```
 
 > **_WARNING:_**  In order to get the final configured view, developer can use `view` property that is the instance of builded object. if the calling of the `view` property is omitted, the result type is `UIBuilder<ViewType>` instead of `ViewType` object
+
+---
 
 4. `UIBuilder` also supports custom configuration closures for some specific cases
 
@@ -79,6 +114,8 @@ let field = UIBuilder(UITextField.self)
 In this specific case, `UIBuilder` configures `UITextField`
 - `layer(_:)` method takes a non-escaping closure with input parameter typed `CALayer` for UIView.layer configuration
 - `finally(_:)` method takes a non-escaping closure with input parameter `view`, so the developer can configure deep hierarchy properties which is not supported by `UIBuilder` library
+
+---
 
 5. `UIBuilder` provides a simplified way to create hierarchies too
 
@@ -118,6 +155,8 @@ Here are the methods of `UILayout`
 
 `UILayout` holds public properties - superView and subView under the hood so the developer can create further configurations with superView and subView
 
+---
+
 6. In addition to single view hierarchy configuration, `UIBuilder` supports addition of the multiple views in a single try
 
 ```Swift
@@ -150,10 +189,13 @@ In case of addition two views, `UILayout` is turned into `UILayoutDouble` class 
 
 In case of addition multiple views at once, UILayout is no longer supported as it becomes much more complicated and practically cannot support all the cases, so the user gets the list of subViews and can do any kind of configuration with native constraint & anchor configurations
 
+---
 
 ## Support
 
 UIBuilder supports iOS 9 and higher versions, but certain properties require higher version if the project deployment target doesn't support them
+
+---
 
 ## Installing UIBuilder
 
@@ -186,6 +228,8 @@ let package = Package(
 ```
 
 Finally import to the swift file: `import UIBuilder`
+
+---
 
 Berrium © 2022
 
