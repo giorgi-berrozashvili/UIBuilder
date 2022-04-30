@@ -16,9 +16,9 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         self.subView2 = subView2
     }
     
+    /// Aligns subViews horizontally and completely fills the superView
     @discardableResult
     open func alignHorizontally(spacing: CGFloat = .zero) -> UILayoutDouble {
-        
         return alignHorizontally(
             left: .zero,
             spacing: spacing,
@@ -26,22 +26,23 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Aligns subViews horizontally with the given horizontal margins
     @discardableResult
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat) -> UILayoutDouble {
-        
         return alignHorizontallyPrivate(
             left: left,
             spacing: spacing,
             right: right,
-            firstTop: nil,
-            firstBottom: nil,
-            secondTop: nil,
-            secondBottom: nil
+            firstTop: .zero,
+            firstBottom: .zero,
+            secondTop: .zero,
+            secondBottom: .zero
         )
     }
     
+    /// Creates a custom horizontal alignment, where the first inserted view is stretched with given vertical margins and the second is centered, i.e. superView gets its contentSize from the first view
     @discardableResult
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
@@ -60,6 +61,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Creates a custom horizontal alignment, where the first inserted view is centered and the second is stretched to the superView, i.e. superView gets its contentSize from the second view
     @discardableResult
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
@@ -78,6 +80,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Aligns the given subViews horizontally, fills the superView with the specified edge insets
     @discardableResult
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
@@ -96,6 +99,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Fills the superView with the given subViews with specified edge insets for each subViews
     @discardableResult
     open func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
@@ -116,6 +120,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Aligns subViews vertically and completely fills the superView
     @discardableResult
     open func alignVertically(spacing: CGFloat = .zero) -> UILayoutDouble {
         
@@ -126,6 +131,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Aligns subViews vertically with the given vertical margins
     @discardableResult
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
@@ -135,13 +141,14 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
             top: top,
             spacing: spacing,
             bottom: bottom,
-            firstLeft: nil,
-            firstRight: nil,
-            secondLeft: nil,
-            secondRight: nil
+            firstLeft: .zero,
+            firstRight: .zero,
+            secondLeft: .zero,
+            secondRight: .zero
         )
     }
     
+    /// Creates a custom vertical alignment, where the first inserted view is stretched with given horizontal margins and the second is centered, i.e. superView gets its contentSize from the first view
     @discardableResult
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
@@ -160,6 +167,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Creates a custom vertical alignment, where the first inserted view is centered and the second is stretched with the given margins to the superView, i.e. superView gets its contentSize from the second view
     @discardableResult
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
@@ -178,6 +186,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Aligns the given subViews vertically, fills the superView with the specified edge insets
     @discardableResult
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
@@ -196,6 +205,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Aligns the given subViews vertically, fills the superView with the specified edge insets for each subViews
     @discardableResult
     open func alignVertically(top: CGFloat,
                               spacing: CGFloat,
@@ -216,6 +226,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
         )
     }
     
+    /// Creates an independent alignment where the sibling subViews are not related to each other
     @discardableResult
     open func alignZStack(firstTop: CGFloat,
                           firstLeft: CGFloat,
@@ -258,8 +269,12 @@ extension UILayoutDouble {
         
         subView2.leadingAnchor.constraint(equalTo: subView1.trailingAnchor, constant: spacing).isActive = true
         
-        subView1.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
-        subView2.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        if firstTop == nil && firstBottom == nil {
+            subView1.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        }
+        if secondTop == nil && secondBottom == nil {
+            subView2.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        }
         return self
     }
     
@@ -281,9 +296,12 @@ extension UILayoutDouble {
         
         subView2.topAnchor.constraint(equalTo: subView1.bottomAnchor, constant: spacing).isActive = true
         
-        subView1.centerXAnchor.constraint(equalTo: superView.centerXAnchor).isActive = true
-        subView2.centerXAnchor.constraint(equalTo: superView.centerXAnchor).isActive = true
-        
+        if firstLeft == nil && firstRight == nil {
+            subView1.centerXAnchor.constraint(equalTo: superView.centerXAnchor).isActive = true
+        }
+        if secondLeft == nil && secondRight == nil {
+            subView2.centerXAnchor.constraint(equalTo: superView.centerXAnchor).isActive = true
+        }
         return self
     }
 }
