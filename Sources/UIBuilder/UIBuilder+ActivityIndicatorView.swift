@@ -5,21 +5,21 @@
 
 import UIKit
 
-extension UIBuilder where ViewType == UIActivityIndicatorView {
+extension UIBuilder where ViewType: UIActivityIndicatorView {
     @discardableResult
-    open func hidesWhenStopped(_ hidesWhenStopped: Bool) -> UIBuilder<UIActivityIndicatorView> {
+    open func hidesWhenStopped(_ hidesWhenStopped: Bool) -> UIBuilder {
         self.view.hidesWhenStopped = hidesWhenStopped
         return self
     }
     
     @discardableResult
-    open func style(_ style: UIActivityIndicatorView.Style) -> UIBuilder<UIActivityIndicatorView> {
+    open func style(_ style: UIActivityIndicatorView.Style) -> UIBuilder {
         self.view.style = style
         return self
     }
     
     @discardableResult
-    open func color(_ color: UIColor?) -> UIBuilder<UIActivityIndicatorView> {
+    open func color(_ color: UIColor?) -> UIBuilder {
         self.view.color = color
         return self
     }
