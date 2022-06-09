@@ -228,24 +228,23 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Creates an independent alignment where the sibling subViews are not related to each other
     @discardableResult
-    open func alignZStack(firstTop: CGFloat,
-                          firstLeft: CGFloat,
-                          firstRight: CGFloat,
-                          firstBottom: CGFloat,
-                          secondTop: CGFloat,
-                          secondLeft: CGFloat,
-                          secondRight: CGFloat,
-                          secondBottom: CGFloat) -> UILayoutDouble {
+    open func alignZStack(firstTop: CGFloat?,
+                          firstLeft: CGFloat?,
+                          firstRight: CGFloat?,
+                          firstBottom: CGFloat?,
+                          secondTop: CGFloat?,
+                          secondLeft: CGFloat?,
+                          secondRight: CGFloat?,
+                          secondBottom: CGFloat?) -> UILayoutDouble {
+        firstTop.map { subView1.topAnchor.constraint(equalTo: superView.topAnchor, constant: $0).isActive = true }
+        firstLeft.map { subView1.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: $0).isActive = true }
+        firstRight.map { subView1.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -$0).isActive = true }
+        firstBottom.map { subView1.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -$0).isActive = true }
         
-        subView1.topAnchor.constraint(equalTo: superView.topAnchor, constant: firstTop).isActive = true
-        subView1.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: firstLeft).isActive = true
-        subView1.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -firstRight).isActive = true
-        subView1.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -firstBottom).isActive = true
-        
-        subView2.topAnchor.constraint(equalTo: superView.topAnchor, constant: secondTop).isActive = true
-        subView2.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: secondLeft).isActive = true
-        subView2.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -secondRight).isActive = true
-        subView2.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -secondBottom).isActive = true
+        secondTop.map { subView2.topAnchor.constraint(equalTo: superView.topAnchor, constant: $0).isActive = true }
+        secondLeft.map { subView2.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: $0).isActive = true }
+        secondRight.map { subView2.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -$0).isActive = true }
+        secondBottom.map { subView2.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -$0).isActive = true }
         return self
     }
 }
