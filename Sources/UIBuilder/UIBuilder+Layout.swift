@@ -17,36 +17,36 @@ open class UILayout<SuperView, SubView> where SuperView: UIView, SubView: UIView
     }
     
     @discardableResult
-    open func top(_ padding: CGFloat = .zero) -> UILayout {
+    public func top(_ padding: CGFloat = .zero) -> UILayout {
         subView.topAnchor.constraint(equalTo: superView.topAnchor, constant: padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func left(_ padding: CGFloat = .zero) -> UILayout {
+    public func left(_ padding: CGFloat = .zero) -> UILayout {
         subView.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func right(_ padding: CGFloat = .zero) -> UILayout {
+    public func right(_ padding: CGFloat = .zero) -> UILayout {
         subView.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func bottom(_ padding: CGFloat = .zero) -> UILayout {
+    public func bottom(_ padding: CGFloat = .zero) -> UILayout {
         subView.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -padding).isActive = true
         return self
     }
     
     @discardableResult
-    open func padding(_ padding: CGFloat) -> UILayout {
+    public func padding(_ padding: CGFloat) -> UILayout {
         return self.top(padding).left(padding).right(padding).bottom(padding)
     }
     
     @discardableResult
-    open func center(_ axis: NSLayoutConstraint.Axis) -> UILayout {
+    public func center(_ axis: NSLayoutConstraint.Axis) -> UILayout {
         switch axis {
         case .vertical:
             subView.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true

@@ -18,7 +18,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Aligns subViews horizontally and completely fills the superView
     @discardableResult
-    open func alignHorizontally(spacing: CGFloat = .zero) -> UILayoutDouble {
+    public func alignHorizontally(spacing: CGFloat = .zero) -> UILayoutDouble {
         return alignHorizontally(
             left: .zero,
             spacing: spacing,
@@ -28,7 +28,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Aligns subViews horizontally with the given horizontal margins
     @discardableResult
-    open func alignHorizontally(left: CGFloat,
+    public func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat) -> UILayoutDouble {
         return alignHorizontallyPrivate(
@@ -44,7 +44,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Creates a custom horizontal alignment, where the first inserted view is stretched with given vertical margins and the second is centered, i.e. superView gets its contentSize from the first view
     @discardableResult
-    open func alignHorizontally(left: CGFloat,
+    public func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat,
                                 firstTop: CGFloat,
@@ -63,7 +63,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Creates a custom horizontal alignment, where the first inserted view is centered and the second is stretched to the superView, i.e. superView gets its contentSize from the second view
     @discardableResult
-    open func alignHorizontally(left: CGFloat,
+    public func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat,
                                 secondTop: CGFloat,
@@ -82,7 +82,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Aligns the given subViews horizontally, fills the superView with the specified edge insets
     @discardableResult
-    open func alignHorizontally(left: CGFloat,
+    public func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat,
                                 top: CGFloat,
@@ -101,7 +101,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Fills the superView with the given subViews with specified edge insets for each subViews
     @discardableResult
-    open func alignHorizontally(left: CGFloat,
+    public func alignHorizontally(left: CGFloat,
                                 spacing: CGFloat,
                                 right: CGFloat,
                                 firstTop: CGFloat,
@@ -122,7 +122,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Aligns subViews vertically and completely fills the superView
     @discardableResult
-    open func alignVertically(spacing: CGFloat = .zero) -> UILayoutDouble {
+    public func alignVertically(spacing: CGFloat = .zero) -> UILayoutDouble {
         
         return alignVertically(
             top: .zero,
@@ -133,7 +133,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Aligns subViews vertically with the given vertical margins
     @discardableResult
-    open func alignVertically(top: CGFloat,
+    public func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat) -> UILayoutDouble {
         
@@ -150,7 +150,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Creates a custom vertical alignment, where the first inserted view is stretched with given horizontal margins and the second is centered, i.e. superView gets its contentSize from the first view
     @discardableResult
-    open func alignVertically(top: CGFloat,
+    public func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat,
                               firstLeft: CGFloat,
@@ -169,7 +169,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Creates a custom vertical alignment, where the first inserted view is centered and the second is stretched with the given margins to the superView, i.e. superView gets its contentSize from the second view
     @discardableResult
-    open func alignVertically(top: CGFloat,
+    public func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat,
                               secondLeft: CGFloat,
@@ -188,7 +188,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Aligns the given subViews vertically, fills the superView with the specified edge insets
     @discardableResult
-    open func alignVertically(top: CGFloat,
+    public func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat,
                               left: CGFloat,
@@ -207,7 +207,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Aligns the given subViews vertically, fills the superView with the specified edge insets for each subViews
     @discardableResult
-    open func alignVertically(top: CGFloat,
+    public func alignVertically(top: CGFloat,
                               spacing: CGFloat,
                               bottom: CGFloat,
                               firstLeft: CGFloat,
@@ -228,7 +228,7 @@ open class UILayoutDouble<SuperView, SubView1, SubView2> where SuperView: UIView
     
     /// Creates an independent alignment where the sibling subViews are not related to each other
     @discardableResult
-    open func alignZStack(firstTop: CGFloat?,
+    public func alignZStack(firstTop: CGFloat?,
                           firstLeft: CGFloat?,
                           firstRight: CGFloat?,
                           firstBottom: CGFloat?,

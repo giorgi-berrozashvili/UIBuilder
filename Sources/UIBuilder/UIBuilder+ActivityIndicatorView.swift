@@ -7,19 +7,19 @@ import UIKit
 
 extension UIBuilder where ViewType: UIActivityIndicatorView {
     @discardableResult
-    open func hidesWhenStopped(_ hidesWhenStopped: Bool) -> UIBuilder {
+    public func hidesWhenStopped(_ hidesWhenStopped: Bool) -> UIBuilder {
         self.view.hidesWhenStopped = hidesWhenStopped
         return self
     }
     
     @discardableResult
-    open func style(_ style: UIActivityIndicatorView.Style) -> UIBuilder {
+    public func style(_ style: UIActivityIndicatorView.Style) -> UIBuilder {
         self.view.style = style
         return self
     }
     
     @discardableResult
-    open func color(_ color: UIColor?) -> UIBuilder {
+    public func color(_ color: UIColor?) -> UIBuilder {
         self.view.color = color
         return self
     }

@@ -9,7 +9,7 @@ public typealias LayoutCompletion = ((_ superView: UIView, _ subViews: [UIView])
 
 extension UIBuilder {
     @discardableResult
-    open func subView<SubViewType>(_ subview: SubViewType,
+    public func subView<SubViewType>(_ subview: SubViewType,
                                    _ completion: ((UILayout<ViewType, SubViewType>) -> Void)? = nil) -> UIBuilder where SubViewType: UIView  {
         
         view.addSubview(subview)
@@ -19,7 +19,7 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func subViews<SubView1, SubView2>(_ subview1: SubView1,
+    public func subViews<SubView1, SubView2>(_ subview1: SubView1,
                                           _ subview2: SubView2,
                                           _ completion: ((UILayoutDouble<ViewType, SubView1, SubView2>) -> Void)? = nil) -> UIBuilder where SubView1: UIView, SubView2: UIView  {
         
@@ -31,7 +31,7 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func subView<SubViewType>(_ subview: SubViewType,
+    public func subView<SubViewType>(_ subview: SubViewType,
                                    _ completion: ((_ superView: ViewType, _ subView: SubViewType) -> Void)? = nil) -> UIBuilder where SubViewType: UIView {
         
         view.addSubview(subview)
@@ -40,7 +40,7 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func subViews<SubViewType1, SubViewType2>(_ subview1: SubViewType1,
+    public func subViews<SubViewType1, SubViewType2>(_ subview1: SubViewType1,
                                                   _ subview2: SubViewType2,
                                                   _ completion: ((_ superView: ViewType, _ subView1: SubViewType1, _ subview2: SubViewType2) -> Void)? = nil) -> UIBuilder where SubViewType1: UIView, SubViewType2: UIView {
         
@@ -51,7 +51,7 @@ extension UIBuilder {
     }
     
     @discardableResult
-    open func subViews(_ subviews: [UIView],
+    public func subViews(_ subviews: [UIView],
                        _ completion: LayoutCompletion? = nil) -> UIBuilder {
         
         subviews.forEach { view.addSubview($0) }

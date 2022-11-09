@@ -7,228 +7,228 @@ import UIKit
 
 extension UIBuilder where ViewType: UITableView {
     @discardableResult
-    open func delegate(_ delegate: UITableViewDelegate?) -> UIBuilder {
+    public func delegate(_ delegate: UITableViewDelegate?) -> UIBuilder {
         self.view.delegate = delegate
         return self
     }
     
     @discardableResult
-    open func dataSource(_ dataSource: UITableViewDataSource?) -> UIBuilder {
+    public func dataSource(_ dataSource: UITableViewDataSource?) -> UIBuilder {
         self.view.dataSource = dataSource
         return self
     }
     
     @discardableResult
-    open func tableHeaderView(_ tableHeaderView: UIView?) -> UIBuilder {
+    public func tableHeaderView(_ tableHeaderView: UIView?) -> UIBuilder {
         self.view.tableHeaderView = tableHeaderView
         return self
     }
     
     @discardableResult
-    open func tableFooterView(_ tableFooterView: UIView?) -> UIBuilder {
+    public func tableFooterView(_ tableFooterView: UIView?) -> UIBuilder {
         self.view.tableFooterView = tableFooterView
         return self
     }
     
     @discardableResult
-    open func backgroundView(_ backgroundView: UIView?) -> UIBuilder {
+    public func backgroundView(_ backgroundView: UIView?) -> UIBuilder {
         self.view.backgroundView = backgroundView
         return self
     }
     
     @discardableResult
-    open func rowHeight(_ rowHeight: CGFloat) -> UIBuilder {
+    public func rowHeight(_ rowHeight: CGFloat) -> UIBuilder {
         self.view.rowHeight = rowHeight
         return self
     }
     
     @discardableResult
-    open func estimatedRowHeight(_ estimatedRowHeight: CGFloat) -> UIBuilder {
+    public func estimatedRowHeight(_ estimatedRowHeight: CGFloat) -> UIBuilder {
         self.view.estimatedRowHeight = estimatedRowHeight
         return self
     }
     
     @discardableResult
-    open func sectionHeaderHeight(_ sectionHeaderHeight: CGFloat) -> UIBuilder {
+    public func sectionHeaderHeight(_ sectionHeaderHeight: CGFloat) -> UIBuilder {
         self.view.sectionHeaderHeight = sectionHeaderHeight
         return self
     }
     
     @discardableResult
-    open func sectionFooterHeight(_ sectionFooterHeight: CGFloat) -> UIBuilder {
+    public func sectionFooterHeight(_ sectionFooterHeight: CGFloat) -> UIBuilder {
         self.view.sectionFooterHeight = sectionFooterHeight
         return self
     }
     
     @discardableResult
-    open func estimatedSectionHeaderHeight(_ estimatedSectionHeaderHeight: CGFloat) -> UIBuilder {
+    public func estimatedSectionHeaderHeight(_ estimatedSectionHeaderHeight: CGFloat) -> UIBuilder {
         self.view.estimatedSectionHeaderHeight = estimatedSectionHeaderHeight
         return self
     }
     
     @discardableResult
-    open func estimatedSectionFooterHeight(_ estimatedSectionFooterHeight: CGFloat) -> UIBuilder {
+    public func estimatedSectionFooterHeight(_ estimatedSectionFooterHeight: CGFloat) -> UIBuilder {
         self.view.estimatedSectionFooterHeight = estimatedSectionFooterHeight
         return self
     }
     
     @discardableResult
-    open func cellLayoutMarginsFollowReadableWidth(_ cellLayoutMarginsFollowReadableWidth: Bool) -> UIBuilder {
+    public func cellLayoutMarginsFollowReadableWidth(_ cellLayoutMarginsFollowReadableWidth: Bool) -> UIBuilder {
         self.view.cellLayoutMarginsFollowReadableWidth = cellLayoutMarginsFollowReadableWidth
         return self
     }
     
     @discardableResult
-    open func separatorColor(_ separatorColor: UIColor?) -> UIBuilder {
+    public func separatorColor(_ separatorColor: UIColor?) -> UIBuilder {
         self.view.separatorColor = separatorColor
         return self
     }
     
     @discardableResult
-    open func separatorInset(_ separatorInset: UIEdgeInsets) -> UIBuilder {
+    public func separatorInset(_ separatorInset: UIEdgeInsets) -> UIBuilder {
         self.view.separatorInset = separatorInset
         return self
     }
     
     @discardableResult
-    open func separatorStyle(_ separatorStyle: UITableViewCell.SeparatorStyle) -> UIBuilder {
+    public func separatorStyle(_ separatorStyle: UITableViewCell.SeparatorStyle) -> UIBuilder {
         self.view.separatorStyle = separatorStyle
         return self
     }
     
     @discardableResult
-    open func separatorEffect(_ separatorEffect: UIVisualEffect?) -> UIBuilder {
+    public func separatorEffect(_ separatorEffect: UIVisualEffect?) -> UIBuilder {
         self.view.separatorEffect = separatorEffect
         return self
     }
     
     @discardableResult
-    open func allowsSelection(_ allowsSelection: Bool) -> UIBuilder {
+    public func allowsSelection(_ allowsSelection: Bool) -> UIBuilder {
         self.view.allowsSelection = allowsSelection
         return self
     }
     
     @discardableResult
-    open func allowsMultipleSelection(_ allowsMultipleSelection: Bool) -> UIBuilder {
+    public func allowsMultipleSelection(_ allowsMultipleSelection: Bool) -> UIBuilder {
         self.view.allowsMultipleSelection = allowsMultipleSelection
         return self
     }
     
     @discardableResult
-    open func allowsSelectionDuringEditing(_ allowsSelectionDuringEditing: Bool) -> UIBuilder {
+    public func allowsSelectionDuringEditing(_ allowsSelectionDuringEditing: Bool) -> UIBuilder {
         self.view.allowsSelectionDuringEditing = allowsSelectionDuringEditing
         return self
     }
     
     @discardableResult
-    open func allowsMultipleSelectionDuringEditing(_ allowsMultipleSelectionDuringEditing: Bool) -> UIBuilder {
+    public func allowsMultipleSelectionDuringEditing(_ allowsMultipleSelectionDuringEditing: Bool) -> UIBuilder {
         self.view.allowsMultipleSelectionDuringEditing = allowsMultipleSelectionDuringEditing
         return self
     }
     
     @discardableResult
-    open func sectionIndexMinimumDisplayRowCount(_ sectionIndexMinimumDisplayRowCount: Int) -> UIBuilder {
+    public func sectionIndexMinimumDisplayRowCount(_ sectionIndexMinimumDisplayRowCount: Int) -> UIBuilder {
         self.view.sectionIndexMinimumDisplayRowCount = sectionIndexMinimumDisplayRowCount
         return self
     }
     
     @discardableResult
-    open func isEditing(_ isEditing: Bool) -> UIBuilder {
+    public func isEditing(_ isEditing: Bool) -> UIBuilder {
         self.view.isEditing = isEditing
         return self
     }
     
     @discardableResult
-    open func sectionIndexColor(_ sectionIndexColor: UIColor?) -> UIBuilder {
+    public func sectionIndexColor(_ sectionIndexColor: UIColor?) -> UIBuilder {
         self.view.sectionIndexColor = sectionIndexColor
         return self
     }
     
     @discardableResult
-    open func sectionIndexBackgroundColor(_ sectionIndexBackgroundColor: UIColor?) -> UIBuilder {
+    public func sectionIndexBackgroundColor(_ sectionIndexBackgroundColor: UIColor?) -> UIBuilder {
         self.view.sectionIndexBackgroundColor = sectionIndexBackgroundColor
         return self
     }
     
     @discardableResult
-    open func sectionIndexTrackingBackgroundColor(_ sectionIndexTrackingBackgroundColor: UIColor?) -> UIBuilder {
+    public func sectionIndexTrackingBackgroundColor(_ sectionIndexTrackingBackgroundColor: UIColor?) -> UIBuilder {
         self.view.sectionIndexTrackingBackgroundColor = sectionIndexTrackingBackgroundColor
         return self
     }
     
     @available(iOS 10.0, *)
     @discardableResult
-    open func prefetchDataSource(_ prefetchDataSource: UITableViewDataSourcePrefetching?) -> UIBuilder {
+    public func prefetchDataSource(_ prefetchDataSource: UITableViewDataSourcePrefetching?) -> UIBuilder {
         self.view.prefetchDataSource = prefetchDataSource
         return self
     }
     
     @available(iOS 11.0, *)
     @discardableResult
-    open func insetsContentViewsToSafeArea(_ insetsContentViewsToSafeArea: Bool) -> UIBuilder {
+    public func insetsContentViewsToSafeArea(_ insetsContentViewsToSafeArea: Bool) -> UIBuilder {
         self.view.insetsContentViewsToSafeArea = insetsContentViewsToSafeArea
         return self
     }
     
     @available(iOS 11.0, *)
     @discardableResult
-    open func separatorInsetReference(_ separatorInsetReference: UITableView.SeparatorInsetReference) -> UIBuilder {
+    public func separatorInsetReference(_ separatorInsetReference: UITableView.SeparatorInsetReference) -> UIBuilder {
         self.view.separatorInsetReference = separatorInsetReference
         return self
     }
     
     @available(iOS 11.0, *)
     @discardableResult
-    open func dragDelegate(_ dragDelegate: UITableViewDragDelegate?) -> UIBuilder {
+    public func dragDelegate(_ dragDelegate: UITableViewDragDelegate?) -> UIBuilder {
         self.view.dragDelegate = dragDelegate
         return self
     }
     
     @available(iOS 11.0, *)
     @discardableResult
-    open func dropDelegate(_ dropDelegate: UITableViewDropDelegate?) -> UIBuilder {
+    public func dropDelegate(_ dropDelegate: UITableViewDropDelegate?) -> UIBuilder {
         self.view.dropDelegate = dropDelegate
         return self
     }
     
     @available(iOS 11.0, *)
     @discardableResult
-    open func dragInteractionEnabled(_ dragInteractionEnabled: Bool) -> UIBuilder {
+    public func dragInteractionEnabled(_ dragInteractionEnabled: Bool) -> UIBuilder {
         self.view.dragInteractionEnabled = dragInteractionEnabled
         return self
     }
     
     @available(iOS 15.0, *)
     @discardableResult
-    open func sectionHeaderTopPadding(_ sectionHeaderTopPadding: CGFloat) -> UIBuilder {
+    public func sectionHeaderTopPadding(_ sectionHeaderTopPadding: CGFloat) -> UIBuilder {
         self.view.sectionHeaderTopPadding = sectionHeaderTopPadding
         return self
     }
     
     @available(iOS 15.0, *)
     @discardableResult
-    open func fillerRowHeight(_ fillerRowHeight: CGFloat) -> UIBuilder {
+    public func fillerRowHeight(_ fillerRowHeight: CGFloat) -> UIBuilder {
         self.view.fillerRowHeight = fillerRowHeight
         return self
     }
     
     @available(iOS 15.0, *)
     @discardableResult
-    open func allowsFocusDuringEditing(_ allowsFocusDuringEditing: Bool) -> UIBuilder {
+    public func allowsFocusDuringEditing(_ allowsFocusDuringEditing: Bool) -> UIBuilder {
         self.view.allowsFocusDuringEditing = allowsFocusDuringEditing
         return self
     }
     
     @available(iOS 15.0, *)
     @discardableResult
-    open func allowsFocus(_ allowsFocus: Bool) -> UIBuilder {
+    public func allowsFocus(_ allowsFocus: Bool) -> UIBuilder {
         self.view.allowsFocus = allowsFocus
         return self
     }
     
     @available(iOS 15.0, *)
     @discardableResult
-    open func isPrefetchingEnabled(_ isPrefetchingEnabled: Bool) -> UIBuilder {
+    public func isPrefetchingEnabled(_ isPrefetchingEnabled: Bool) -> UIBuilder {
         self.view.isPrefetchingEnabled = isPrefetchingEnabled
         return self
     }
