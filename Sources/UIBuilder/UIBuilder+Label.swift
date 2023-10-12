@@ -43,6 +43,7 @@ extension UIBuilder where ViewType: UILabel {
     }
     
     @discardableResult
+    @available(iOS 14.0, *)
     public func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> UIBuilder {
         self.view.lineBreakStrategy = lineBreakStrategy
         return self
